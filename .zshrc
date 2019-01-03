@@ -59,7 +59,7 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-export LANG=da_DK.UTF8
+export LANG=da_DK.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
