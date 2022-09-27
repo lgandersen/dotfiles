@@ -1,3 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".vim_runtime/sources_non_forked/vim-elixir"]
+	path = .vim_runtime/sources_non_forked/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir.git
