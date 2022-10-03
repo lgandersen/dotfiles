@@ -76,4 +76,3 @@ let g:ale_linters = {'python': ['flake8', 'pylint']}
 let g:ale_fixers = {'python': ['autopep8', 'yapf', 'black']}
 let g:ale_fix_on_save = 1
 let g:ale_python_flake8_options = '--max-line-length=130'
-
