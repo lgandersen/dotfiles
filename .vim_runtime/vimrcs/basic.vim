@@ -58,6 +58,12 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
+" Fix Ex Command mode switch
+nnoremap ø :
+
+" set numbering of lines
+set number
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -116,6 +122,9 @@ set smartcase
 " Highlight search results
 set hlsearch
 
+" Toggle highlightinh on/off when searching
+nnoremap <F3> :set hlsearch!<CR>
+
 " Makes search act like search in modern browsers
 set incsearch 
 
@@ -152,6 +161,10 @@ catch
 endtry
 
 set background=dark
+
+" Enable highlightning on postgres SQL files
+au BufNewFile,BufRead *.psql setf psql
+
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -240,6 +253,33 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
+
+" Irssi-like behaviour for tabs:
+" For some reason <alt-X> (i.e. <M-C> in vim) is messed up with ESC when the signal is parsed from the terminal.
+" But it seems to work with the configuration below
+map <C-n> :tabn<cr>
+map <C-p> :tabp<cr>
+" Tab Control (others)
+nnoremap <Esc>1 :tabn1<cr>
+nnoremap <Esc>2 :tabn2<cr>
+nnoremap <Esc>3 :tabn3<cr>
+nnoremap <Esc>4 :tabn4<cr>
+nnoremap <Esc>5 :tabn5<cr>
+nnoremap <Esc>6 :tabn6<cr>
+nnoremap <Esc>7 :tabn7<cr>
+nnoremap <Esc>8 :tabn8<cr>
+nnoremap <Esc>9 :tabn9<cr>
+nnoremap <Esc>0 :tabn10<cr>
+nnoremap .1 :tabn1<cr>
+nnoremap .2 :tabn2<cr>
+nnoremap .3 :tabn3<cr>
+nnoremap .4 :tabn4<cr>
+nnoremap .5 :tabn5<cr>
+nnoremap .6 :tabn6<cr>
+nnoremap .7 :tabn7<cr>
+nnoremap .8 :tabn8<cr>
+nnoremap .9 :tabn9<cr>
+nnoremap .0 :tabn10<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1

@@ -11,13 +11,78 @@ call pathogen#infect('~/.vim_runtime/pathogen_plugins/{}')
 call pathogen#infect('~/.vim_runtime/pathogen_colorthemes/{}')
 call pathogen#helptags()
 
+call plug#begin('~/.vim_runtime/plugged')
+
+" Make sure you use single quotes
+Plug 'vimwiki/vimwiki'
+Plug 'mhinz/vim-mix-format'
+Plug 'elixir-editors/vim-elixir'
+Plug 'bluz71/vim-moonfly-colors'
+
+"" Any valid git URL is allowed
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"
+"" Multiple Plug commands can be written in a single line using | separators
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"
+"" On-demand loading
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"
+"" Using a non-default branch
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"
+"" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+"Plug 'fatih/vim-go', { 'tag': '*' }
+"
+"" Plugin options
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"
+"" Plugin outside ~/.vim/plugged with post-update hook
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"
+"" Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'
+
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+
+
+""""""""""""""""""""""""""""""
+" => Linting and formatting
+""""""""""""""""""""""""""""""
+" Flake8 ignores:
+let g:flake8_ignore="E201,E202,E231,E501,E701"
+let g:flake8_max_line_length=99
+
+" Options for Elixir formatter
+let g:mix_format_on_save = 1
+
+" Check Python files with flake8 and pylint.
+let g:ale_linters = {'python': ['flake8', 'pylint']}
+" Fix Python files with autopep8 and yapf.
+let g:ale_fixers = {'python': ['autopep8', 'yapf', 'black']}
+let g:ale_fix_on_save = 1
+let g:ale_python_flake8_options = '--max-line-length=130'
+
+
+""""""""""""""""""""""""""""""
+" => vim-markdown plugin
+""""""""""""""""""""""""""""""
+" Disable folding in markdown highlightinh
+let g:vim_markdown_folding_disabled=1
+
+
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
 """"""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
-let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
+let g:bufExplorerFindActive=0
+"let g:bufExplorerFindActive=1
+let g:bufExplorerSortBy='mru'
+"let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
 
 
@@ -36,6 +101,10 @@ if has("win16") || has("win32")
 else
     let g:yankring_history_dir = '~/.vim_runtime/temp_dirs/'
 endif
+
+" redefined default keys that conflict with mine:
+let g:yankring_replace_n_pkey = '<C-m>'
+let g:yankring_replace_n_nkey = '<C-o>'
 
 
 """"""""""""""""""""""""""""""
