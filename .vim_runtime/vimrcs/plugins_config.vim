@@ -18,6 +18,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'mhinz/vim-mix-format'
 Plug 'elixir-editors/vim-elixir'
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
 
 "" Any valid git URL is allowed
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'
