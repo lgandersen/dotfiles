@@ -19,7 +19,9 @@ Plug 'mhinz/vim-mix-format'
 Plug 'elixir-editors/vim-elixir'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jlanzarotta/bufexplorer'
 
 "" Any valid git URL is allowed
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -64,7 +66,7 @@ let g:mix_format_on_save = 1
 " Check Python files with flake8 and pylint.
 let g:ale_linters = {'python': ['flake8', 'pylint']}
 " Fix Python files with autopep8 and yapf.
-let g:ale_fixers = {'python': ['autopep8', 'yapf', 'black']}
+let g:ale_fixers = {'python': ['autopep8', 'yapf', 'black'], 'elixir': ['remove_trailing_lines', 'trim_whitespace', 'mix_format']}
 let g:ale_fix_on_save = 1
 let g:ale_python_flake8_options = '--max-line-length=130'
 
