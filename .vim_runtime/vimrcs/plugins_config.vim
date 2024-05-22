@@ -22,6 +22,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'tomtom/tlib_vim'
 
 "" Any valid git URL is allowed
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'
