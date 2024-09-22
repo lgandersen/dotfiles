@@ -61,7 +61,7 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-export LANG=da_DK.UTF-8
+export LANG=en_DK.utf8
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
