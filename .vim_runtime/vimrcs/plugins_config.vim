@@ -23,6 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tomtom/tlib_vim'
+Plug 'GrzegorzKozub/vim-elixirls'
 
 "" Any valid git URL is allowed
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -58,18 +59,32 @@ call plug#end()
 " => Linting and formatting
 """"""""""""""""""""""""""""""
 " Flake8 ignores:
-let g:flake8_ignore="E201,E202,E231,E501,E701"
-let g:flake8_max_line_length=99
+" let g:flake8_ignore="E201,E202,E231,E501,E701"
+" let g:flake8_ignore="E501,E701,E203"
+" let g:flake8_max_line_length=99
 
 " Options for Elixir formatter
 let g:mix_format_on_save = 1
 
+" Options for elixir-ls: https://github.com/GrzegorzKozub/vim-elixirls
+" Compiled it manually.
+"let s:user_dir = expand('~/.vim_runtime')
+"let g:ale_elixir_elixir_ls_release = s:user_dir . '/plugged/vim-elixirls/elixir-ls/release'
+let g:ale_elixir_elixir_ls_release = '/home/lga/.vim_runtime/plugged/vim-elixirls/elixir-ls/release'
+
+" https://github.com/JakeBecker/elixir-ls/issues/54
+let g:ale_elixir_elixir_ls_config = { 'elixirLS': { 'dialyzerEnabled': v:false } }
+
 " Check Python files with flake8 and pylint.
-let g:ale_linters = {'python': ['flake8', 'pylint']}
+let g:ale_linters = {'python': ['flake8', 'pylint'], 'elixir': [ 'elixir-ls' ]}
 " Fix Python files with autopep8 and yapf.
 let g:ale_fixers = {'python': ['autopep8', 'yapf', 'black'], 'elixir': ['remove_trailing_lines', 'trim_whitespace', 'mix_format']}
 let g:ale_fix_on_save = 1
-let g:ale_python_flake8_options = '--max-line-length=130'
+let g:ale_python_flake8_options = '--max-line-length=130 --ignore=E203'
+
+""""""""""""""""""""""""""""""
+" => vim-elixirls
+""""""""""""""""""""""""""""""
 
 
 """"""""""""""""""""""""""""""
