@@ -91,3 +91,12 @@ export PATH=$PATH:/usr/local/go/bin
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+
+# Neovim alias
+alias nv='nvim'
+
+# ASDF configuration
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# Rebar3 configuration
+export PATH="$HOME/.cache/rebar3/bin:$PATH"
