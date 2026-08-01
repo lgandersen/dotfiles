@@ -3,3 +3,16 @@
 	name = Lasse Grinderslev Andersen
 [push]
 	default = simple
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	hyperlinks = true
+	# side-by-side = true
+[merge]
+	conflictStyle = zdiff3
+[init]
+	defaultBranch = main
