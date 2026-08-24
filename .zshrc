@@ -100,3 +100,15 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # Rebar3 configuration
 export PATH="$HOME/.cache/rebar3/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Claude Code provider profiles: `claude` = Anthropic (OAuth), `zclaude` = z.ai.
+# The profile holds the auth token and is machine-local (see init/init_env.sh).
+zclaude() {
+  local profile="$HOME/.claude/providers/zai.json"
+  [[ -r $profile ]] || { print -u2 "zclaude: no provider profile at $profile"; return 1; }
+  command claude --settings "$profile" "$@"
+}
