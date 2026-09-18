@@ -105,10 +105,12 @@ export PATH="$HOME/.cache/rebar3/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Claude Code provider profiles: `claude` = Anthropic (OAuth), `zclaude` = z.ai.
-# The profile holds the auth token and is machine-local (see init/init_env.sh).
+# Claude Code provider profiles: `claude` = whatever ~/.claude/settings.json points
+# at (mixroute, Anthropic pins), `zclaude` = GLM through the same provider — a
+# pins-only overlay that inherits the base URL/token and remaps the model slots
+# (see init/init_env.sh and ~/obsidian/misc/zclaude.md).
 zclaude() {
-  local profile="$HOME/.claude/providers/zai.json"
+  local profile="$HOME/.claude/providers/glm.json"
   [[ -r $profile ]] || { print -u2 "zclaude: no provider profile at $profile"; return 1; }
   command claude --settings "$profile" "$@"
 }
