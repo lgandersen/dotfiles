@@ -114,3 +114,13 @@ zclaude() {
   [[ -r $profile ]] || { print -u2 "zclaude: no provider profile at $profile"; return 1; }
   command claude --settings "$profile" "$@"
 }
+
+# qclaude: Qwen through the same mixroute provider as `claude`/`zclaude` — a
+# pins-only overlay that inherits the base URL/token and remaps the model
+# slots (see init/init_env.sh and ~/obsidian/misc/zclaude.md for the pattern
+# this clones; Qwen-specific notes in ~/obsidian/misc/mixroute-claude-code.md).
+qclaude() {
+  local profile="$HOME/.claude/providers/qwen.json"
+  [[ -r $profile ]] || { print -u2 "qclaude: no provider profile at $profile"; return 1; }
+  command claude --settings "$profile" "$@"
+}
