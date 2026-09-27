@@ -1,0 +1,7 @@
+{
+  "env": {
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "qwen3.8-max",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "qwen3.8-max",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "qwen3.6-flash"
+  }
+}
