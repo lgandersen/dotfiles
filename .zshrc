@@ -74,6 +74,10 @@ export PATH=$PATH:/usr/local/go/bin
 #   export EDITOR='mvim'
 # fi
 
+# Compose prompts (hermes /prompt, git commits) in LazyVim.
+# VISUAL outranks EDITOR=vi from ~/.profile everywhere that matters.
+export VISUAL=nvim
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
