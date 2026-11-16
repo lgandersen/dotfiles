@@ -2,6 +2,8 @@
 
 Applies to every Claude Code session on this machine.
 
+Please use ASD-STE100 (Simple Technical English) if possible and unless stated otherwise.
+
 ## Code comments
 
 - Match the comment density of the surrounding code; for new files, near zero.
