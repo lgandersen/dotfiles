@@ -1,12 +1,13 @@
 -- bufferline.nvim tweaks.
 --
--- LazyVim maps <S-h>/<S-l> (H/L) to BufferLineCyclePrev/Next. Disable those so
--- the builtin H/L (top/bottom of window) survive — restored in
--- lua/config/keymaps.lua. Buffer cycling stays on [b / ]b.
+-- <S-h>/<S-l> are freed for builtin H/L (see lua/config/keymaps.lua); buffer
+-- cycling moves to <C-p>/<C-n>.
 return {
   "akinsho/bufferline.nvim",
   keys = {
     { "<S-h>", false },
     { "<S-l>", false },
+    { "<C-p>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+    { "<C-n>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
   },
 }
